@@ -1,7 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using Step.Hotel.Atr.RealPortal.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+
+string connectionString = builder.Configuration
+    .GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+options.UseSqlServer(connectionString));
+
+
+
 
 var app = builder.Build();
 
