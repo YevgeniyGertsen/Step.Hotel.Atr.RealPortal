@@ -29,7 +29,15 @@ namespace Step.Hotel.Atr.Admin.Controllers
         }
 
 
+        [HttpGet]
         public IActionResult ModifyTeam()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        //public IActionResult ModifyTeam(DateTime CreateDate, string PictureUrl) 
+        public IActionResult ModifyTeam(Team team)
         {
             return View();
         }
