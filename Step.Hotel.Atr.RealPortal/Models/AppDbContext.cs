@@ -10,5 +10,7 @@ namespace Step.Hotel.Atr.RealPortal.Models
         }
 
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

@@ -11,10 +11,12 @@ namespace Step.Hotel.Atr.RealPortal.Controllers
            db = _db;
         }
 
-
         public IActionResult Index()
         {
-            var data = db.Teams.ToList();
+            ViewDataTeamIndex data = new ViewDataTeamIndex();
+            data.Teams = db.Teams.ToList();
+            data.Clients = db.Clients.ToList();
+
             return View(data);
         }
     }

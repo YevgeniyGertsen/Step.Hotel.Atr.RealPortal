@@ -1,0 +1,36 @@
+﻿@model List<Team>
+
+<h1>Teams</h1>
+<hr />
+
+<br />
+<a href="home/AddTeam">Add team</a>
+<br />
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>CreateDate</td>
+        <td>PictureUrl</td>
+        <td>FullName</td>
+        <td>Position</td>
+        <td>Desctiption</td>
+        <td></td>
+    </tr>
+
+    @foreach (Team team in Model)
+    {
+        <tr>
+            <td>@team.Id</td>
+            <td>@team.CreateDate</td>
+            <td>@team.PictureUrl</td>
+            <td>@team.FullName</td>
+            <td>@team.Position</td>
+            <td>@team.Desctiption</td>
+            <td>
+                <a href="home/EditTeam/@team.Id">Edit</a> |
+                <a href="home/DeleteTeam/@team.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

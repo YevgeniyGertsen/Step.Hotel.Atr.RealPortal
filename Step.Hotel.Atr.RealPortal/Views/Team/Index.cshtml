@@ -1,4 +1,6 @@
-﻿<!-- Team Area Start -->
+﻿@model ViewDataTeamIndex
+
+<!-- Team Area Start -->
 <section class="team-area pt-90 team-section">
     <div class="container">
         <div class="row">
@@ -10,96 +12,26 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-4">
-                <div class="single-team">
-                    <div class="team-image"><img src="../img/team/1.jpg" alt=""></div>
-                    <div class="team-hover">
-                        <h4>Kathy Luis</h4>
-                        <span class="block">( Officer )</span>
-                        <p>Lorem ipsupm dolor sit amet, conse ctetur adipisicing elit, sed do eiumthgtipsupm dolor sit amet conse</p>
-                        <div class="team-links">
-                            <a href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
+
+            @foreach (Team item in Model.Teams)
+            {
+                <div class="col-md-4 col-sm-4">
+                    <div class="single-team">
+                        <div class="team-image"><img src="@item.PictureUrl" alt=""></div>
+                        <div class="team-hover">
+                            <h4>@item.FullName</h4>
+                            <span class="block">( @item.Position )</span>
+                            <p>@item.Desctiption</p>
+                            <div class="team-links">
+                                <a href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
+                                <a href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
+                                <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="single-team">
-                    <div class="team-image"><img src="../img/team/2.jpg" alt=""></div>
-                    <div class="team-hover">
-                        <h4>Them Jonse</h4>
-                        <span class="block">( Manager )</span>
-                        <p>Lorem ipsupm dolor sit amet, conse ctetur adipisicing elit, sed do eiumthgtipsupm dolor sit amet conse</p>
-                        <div class="team-links">
-                            <a href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="single-team">
-                    <div class="team-image"><img src="../img/team/3.jpg" alt=""></div>
-                    <div class="team-hover">
-                        <h4>Marry Gomej</h4>
-                        <span class="block">( Leader )</span>
-                        <p>Lorem ipsupm dolor sit amet, conse ctetur adipisicing elit, sed do eiumthgtipsupm dolor sit amet conse</p>
-                        <div class="team-links">
-                            <a href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="single-team">
-                    <div class="team-image"><img src="../img/team/4.jpg" alt=""></div>
-                    <div class="team-hover">
-                        <h4>Noah Jackson</h4>
-                        <span class="block">( Officer )</span>
-                        <p>Lorem ipsupm dolor sit amet, conse ctetur adipisicing elit, sed do eiumthgtipsupm dolor sit amet conse</p>
-                        <div class="team-links">
-                            <a href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="single-team">
-                    <div class="team-image"><img src="../img/team/5.jpg" alt=""></div>
-                    <div class="team-hover">
-                        <h4>Emma Madison</h4>
-                        <span class="block">( Manager )</span>
-                        <p>Lorem ipsupm dolor sit amet, conse ctetur adipisicing elit, sed do eiumthgtipsupm dolor sit amet conse</p>
-                        <div class="team-links">
-                            <a href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="single-team">
-                    <div class="team-image"><img src="../img/team/1.jpg" alt=""></div>
-                    <div class="team-hover">
-                        <h4>Benjamin Aiden</h4>
-                        <span class="block">( Leader )</span>
-                        <p>Lorem ipsupm dolor sit amet, conse ctetur adipisicing elit, sed do eiumthgtipsupm dolor sit amet conse</p>
-                        <div class="team-links">
-                            <a href="https://www.facebook.com/"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i class="zmdi zmdi-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
+
             <div class="col-md-12 fix">
                 <div class="pagination-content text-center">
                     <ul class="pagination">
@@ -109,60 +41,35 @@
                     </ul>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 <!-- Team Area End -->
+
 <!-- Client Area Start -->
 <div class="client-area">
     <div class="container">
         <div class="row">
             <div class="client-carousel">
-                <div class="single-client">
-                    <div class="client-image">
-                        <a href="#">
-                            <img src="../img/client/1.png" alt="" class="p-img">
-                            <img src="../img/client/1-hover.png" alt="" class="s-img">
-                        </a>
+                @foreach (Client item in Model.Clients)
+                {
+                    <div class="single-client">
+                        <div class="client-image">
+                            <a href="@item.ClientUrl">
+                                <img src="@item.ClientImageUrl" alt="" class="p-img">
+                                <img src="@item.ClientImageHoverUrl" alt="" class="s-img">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="single-client">
-                    <div class="client-image">
-                        <a href="#">
-                            <img src="../img/client/2.png" alt="" class="p-img">
-                            <img src="../img/client/2-hover.png" alt="" class="s-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="single-client">
-                    <div class="client-image">
-                        <a href="#">
-                            <img src="../img/client/3.png" alt="" class="p-img">
-                            <img src="../img/client/3-hover.png" alt="" class="s-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="single-client">
-                    <div class="client-image">
-                        <a href="#">
-                            <img src="../img/client/4.png" alt="" class="p-img">
-                            <img src="../img/client/4-hover.png" alt="" class="s-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="single-client">
-                    <div class="client-image">
-                        <a href="#">
-                            <img src="../img/client/5.png" alt="" class="p-img">
-                            <img src="../img/client/5-hover.png" alt="" class="s-img">
-                        </a>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
 </div>
 <!-- Client Area End -->
+
+
 <!-- Newsletter Area Start -->
 <section class="newsletter-area bg-light">
     <div class="container">
