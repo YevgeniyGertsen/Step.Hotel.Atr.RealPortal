@@ -57,9 +57,22 @@ namespace Step.Hotel.Atr.Admin.Controllers
 
             _db.SaveChanges();
 
-            return View();
+            return RedirectToAction("TeamList");
         }
 
+        public IActionResult DeleteTeam(int Id)
+        {
+            if (Id != 0)
+            {
+                var data = _db.Teams.Find(Id);
+                if(data!=null)
+                {
+                    _db.Teams.Remove(data);
+                    _db.SaveChanges();
+                }
+            }
 
+            return RedirectToAction("TeamList");
+        }
     }
 }
