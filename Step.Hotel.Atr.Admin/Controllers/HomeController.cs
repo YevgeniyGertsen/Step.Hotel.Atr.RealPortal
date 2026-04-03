@@ -30,15 +30,33 @@ namespace Step.Hotel.Atr.Admin.Controllers
 
 
         [HttpGet]
-        public IActionResult ModifyTeam()
+        public IActionResult ModifyTeam(int Id = 0)
         {
-            return View();
+            Team team = new Team();
+            if (Id != 0)
+                team = _db.Teams.Find(Id);
+
+            return View(team);
         }
 
         [HttpPost]
         //public IActionResult ModifyTeam(DateTime CreateDate, string PictureUrl) 
         public IActionResult ModifyTeam(Team team)
         {
+            if (team.Id != 0)
+            {
+                var data = _db.Teams.Find(team.Id);
+                data.FullName = team.FullName;
+                data.Desctiption = team.Desctiption;
+                data.CreateDate = team.CreateDate;
+                data.PictureUrl = team.PictureUrl;
+                data.Position = team.Position;
+            }
+            else
+                _db.Teams.Add(team);
+
+            _db.SaveChanges();
+
             return View();
         }
 

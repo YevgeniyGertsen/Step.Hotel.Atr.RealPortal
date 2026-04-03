@@ -1,49 +1,49 @@
-﻿<h1>Modify Team</h1>
+﻿@model Team
+
+<h1>Modify Team</h1>
 
 <form action="/home/modifyteam" method="post">
-
-
     <table>
 
         <tr style="margin: 5px">
             <td style="padding: 5px">Id</td>
             <td style="padding: 5px">
-                <input type="hidden" value="" />
+                <input type="text" disabled="disabled" asp-for="Id" />
             </td>
         </tr>
 
         <tr style="margin: 5px">
             <td style="padding: 5px">CreateDate</td>
             <td style="padding: 5px">
-                <input type="date" value="" name="CreateDate" />
+                <input type="date" asp-for="CreateDate" />
             </td>
         </tr>
 
         <tr style="margin: 5px">
             <td style="padding: 5px">PictureUrl</td>
             <td style="padding: 5px">
-                <input type="text" value="" name="PictureUrl" />
+                <input type="text" asp-for="PictureUrl" />
             </td>
         </tr>
 
         <tr style="margin: 5px">
             <td style="padding: 5px">FullName</td>
             <td style="padding: 5px">
-                <input type="text" value="" name="FullName" />
+                <input type="text" asp-for="FullName" />
             </td>
         </tr>
 
         <tr style="margin: 5px">
             <td style="padding: 5px">Position</td>
             <td style="padding: 5px">
-                <input type="text" value="" name="Position" />
+                <input type="text" asp-for="Position" />
             </td>
         </tr>
 
         <tr style="margin: 5px">
             <td style="padding: 5px">Desctiption</td>
             <td style="padding: 5px">
-                <input type="text" value="" name="Desctiption" />
+                <input type="text" asp-for="Desctiption" />
             </td>
         </tr>
     </table>
